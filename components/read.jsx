@@ -3,9 +3,11 @@ import { collection, addDoc, getDocs, orderBy, query } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 
 
+
 const contato = collection(database,'contato')
 
 export default function Read(){
+
     const [lista, setLista] = useState([])
     const read = ()=>{
     getDocs(query(contato, orderBy('nome')))
@@ -18,7 +20,9 @@ export default function Read(){
   useEffect(()=>{
     read()
   },[])
-
+  return(
+    <>
+  
   {lista.map((lista)=>{
       return(
           <>
@@ -40,6 +44,8 @@ export default function Read(){
               </div>
             </div>
           </>
-      )
+    )
   })}
+  </>
+  )
 }

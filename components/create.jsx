@@ -22,7 +22,6 @@ export default function Create(){
             SetEmail('')
             SetTelefone('')
             SetMensagem('')
-            read()
           })
     }
     
@@ -34,8 +33,7 @@ export default function Create(){
             <input type="tel" placeholder="Telefone" className="form-control" required onChange={event=>SetTelefone(event.target.value)} value={telefone} />
             <textarea placeholder="Mensagem" className="form-control" required onChange={event=>SetMensagem(event.target.value)} value={mensagem} ></textarea>
             <input type="submit" value="Salvar" className="btn btn-outline-dark form-control" onClick={create} />
-            </div>
-            <div className="col-md"><h3 className="text-center">Exibir</h3>
+            <div className="col-md"><h3 className="text-center">Exibir</h3></div>
         </div>
         </>
     )
